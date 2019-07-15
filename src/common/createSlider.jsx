@@ -159,6 +159,12 @@ export default function createSlider(Component) {
       }
     };
 
+    onMouseUp = () => {
+      if (this.handlesRefs[this.prevMovedHandleIndex]) {
+        this.handlesRefs[this.prevMovedHandleIndex].clickFocus();
+      }
+    }
+
     onMouseMove = (e) => {
       if (!this.sliderRef) {
         this.onEnd();
